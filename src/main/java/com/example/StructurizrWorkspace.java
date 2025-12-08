@@ -18,9 +18,9 @@ public class StructurizrWorkspace {
         views.getConfiguration().setThemes(
                 "https://fabianorosa1.github.io/structurizr-themes/sap-btp-solution-diagrams-2025.12.08/theme.json");
 
-        // Styles styles = views.getConfiguration().getStyles();
-        // styles.addElementStyle(Tags.SOFTWARE_SYSTEM).background("#1168bd").color("#ffffff");
-        // styles.addElementStyle(Tags.PERSON).background("#08427b").color("#ffffff").shape(Shape.Person);
+        Styles styles = views.getConfiguration().getStyles();
+        styles.addElementStyle(Tags.SOFTWARE_SYSTEM).background("#1168bd").color("#ffffff");
+        styles.addElementStyle(Tags.PERSON).background("#08427b").color("#ffffff").shape(Shape.Person);
 
         Person customer = model.addPerson("Customer", "A customer of the bank.");
         SoftwareSystem internetBankingSystem = model.addSoftwareSystem("Internet Banking System",

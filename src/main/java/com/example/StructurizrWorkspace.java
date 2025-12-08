@@ -4,6 +4,8 @@ import com.structurizr.Workspace;
 import com.structurizr.model.*;
 import com.structurizr.util.WorkspaceUtils;
 import com.structurizr.view.*;
+import com.structurizr.view.AutomaticLayout.RankDirection;
+
 import java.io.File;
 
 public class StructurizrWorkspace {
@@ -53,7 +55,8 @@ public class StructurizrWorkspace {
                 "Live environment deployment");
 
         liveDeployment.addAllDeploymentNodes();
-        liveDeployment.enableAutomaticLayout();
+        
+        liveDeployment.enableAutomaticLayout(RankDirection.TopBottom);
 
         WorkspaceUtils.saveWorkspaceToJson(workspace, new File("workspace.json"));
 

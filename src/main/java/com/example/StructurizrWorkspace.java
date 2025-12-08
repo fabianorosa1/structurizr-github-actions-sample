@@ -15,12 +15,11 @@ public class StructurizrWorkspace {
         Model model = workspace.getModel();
         ViewSet views = workspace.getViews();
 
-        views.getConfiguration().setThemes("default",
-                "https://fabianorosa1.github.io/structurizr-themes/sap-btp-solution-diagrams-2025.12.08/theme.json");
+        views.getConfiguration().setThemes("https://fabianorosa1.github.io/structurizr-themes/sap-btp-solution-diagrams-2025.12.08/theme.json");
 
-        Styles styles = views.getConfiguration().getStyles();
-        styles.addElementStyle(Tags.SOFTWARE_SYSTEM).background("#1168bd").color("#ffffff");
-        styles.addElementStyle(Tags.PERSON).background("#08427b").color("#ffffff").shape(Shape.Person);
+        //Styles styles = views.getConfiguration().getStyles();
+        //styles.addElementStyle(Tags.SOFTWARE_SYSTEM).background("#1168bd").color("#ffffff");
+        //styles.addElementStyle(Tags.PERSON).background("#08427b").color("#ffffff").shape(Shape.Person);
 
         Person customer = model.addPerson("Customer", "A customer of the bank.");
         SoftwareSystem internetBankingSystem = model.addSoftwareSystem("Internet Banking System",
@@ -30,6 +29,7 @@ public class StructurizrWorkspace {
         Container webApp = internetBankingSystem.addContainer("Web Application", "Delivers the web UI.",
                 "Java & Spring MVC");
         Container database = internetBankingSystem.addContainer("Database", "Stores customer data.", "Oracle");
+        webApp.addTags("SAP L1");
 
         customer.uses(webApp, "Uses");
         webApp.uses(database, "Reads/Writes");
@@ -38,6 +38,7 @@ public class StructurizrWorkspace {
                 "Ubuntu 16.04 LTS", 8);
         DeploymentNode tomcat = liveWebServer.addDeploymentNode("Apache Tomcat", "Java web server.", "Tomcat 8.x", 1);
         tomcat.add(webApp);
+        tomcat.addTags("SAP L0");
 
         DeploymentNode primaryDbServer = model.addDeploymentNode("bigbank-db01", "Primary DB server.",
                 "Ubuntu 16.04 LTS",

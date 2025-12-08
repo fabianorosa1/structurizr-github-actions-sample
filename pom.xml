@@ -21,6 +21,18 @@
         <artifactId>structurizr-client</artifactId>
         <version>${structurizr.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.structurizr/structurizr-client -->
+    <dependency>
+        <groupId>com.structurizr</groupId>
+        <artifactId>structurizr-annotation</artifactId>
+        <version>${structurizr.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.structurizr/structurizr-client -->
+    <dependency>
+        <groupId>com.structurizr</groupId>
+        <artifactId>structurizr-autolayout</artifactId>
+        <version>${structurizr.version}</version>
+    </dependency>        
   </dependencies>
   <build>
     <plugins>

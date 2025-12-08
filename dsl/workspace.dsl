@@ -10,7 +10,7 @@ workspace {
             administratorFrontend = container administratorFrontend "The frontend for the administrator"
             webshopBackend = container webshopBackend "The webshop backend"
             webshopDatabase = container webshopDatabase "The webshop database" {
-                tags "Database"
+                tags "SAP L0"
             }
         }
 
@@ -38,7 +38,7 @@ workspace {
             include *
             autolayout
         }
-        theme default
+        themes default https://github.com/fabianorosa1/structurizr-themes/tree/master/sap-btp-solution-diagrams-2025.12.08/theme.json
         styles {
             element "Database" {
                 shape Cylinder

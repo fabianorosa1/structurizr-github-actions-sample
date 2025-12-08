@@ -10,8 +10,9 @@ workspace {
             administratorFrontend = container administratorFrontend "The frontend for the administrator"
             webshopBackend = container webshopBackend "The webshop backend"
             webshopDatabase = container webshopDatabase "The webshop database" {
-                tags "SAP L0"
+                tags "SAP L1"
             }
+            tags "SAP L0"
         }
 
         // system context relationships

@@ -15,11 +15,12 @@ public class StructurizrWorkspace {
         Model model = workspace.getModel();
         ViewSet views = workspace.getViews();
 
-        views.getConfiguration().setThemes("https://fabianorosa1.github.io/structurizr-themes/sap-btp-solution-diagrams-2025.12.08/theme.json");
+        views.getConfiguration().setThemes(
+                "https://fabianorosa1.github.io/structurizr-themes/sap-btp-solution-diagrams-2025.12.08/theme.json");
 
-        //Styles styles = views.getConfiguration().getStyles();
-        //styles.addElementStyle(Tags.SOFTWARE_SYSTEM).background("#1168bd").color("#ffffff");
-        //styles.addElementStyle(Tags.PERSON).background("#08427b").color("#ffffff").shape(Shape.Person);
+        // Styles styles = views.getConfiguration().getStyles();
+        // styles.addElementStyle(Tags.SOFTWARE_SYSTEM).background("#1168bd").color("#ffffff");
+        // styles.addElementStyle(Tags.PERSON).background("#08427b").color("#ffffff").shape(Shape.Person);
 
         Person customer = model.addPerson("Customer", "A customer of the bank.");
         SoftwareSystem internetBankingSystem = model.addSoftwareSystem("Internet Banking System",
@@ -34,32 +35,50 @@ public class StructurizrWorkspace {
         customer.uses(webApp, "Uses");
         webApp.uses(database, "Reads/Writes");
 
-        DeploymentNode liveWebServer = model.addDeploymentNode("bigbank-web***", "A web server in the farm.",
-                "Ubuntu 16.04 LTS", 8);
-        DeploymentNode tomcat = liveWebServer.addDeploymentNode("Apache Tomcat", "Java web server.", "Tomcat 8.x", 1);
+        DeploymentNode liveWebServer = model.addDeploymentNode(
+                "Live", // ← environment
+                "bigbank-web***",
+                "A web server in the farm.",
+                "Ubuntu 16.04 LTS",
+                8);
+        DeploymentNode tomcat = liveWebServer.addDeploymentNode(
+                "Apache Tomcat",
+                "Java web server.",
+                "Tomcat 8.x",
+                1);
+
         tomcat.add(webApp);
         tomcat.addTags("SAP L0");
 
-        DeploymentNode primaryDbServer = model.addDeploymentNode("bigbank-db01", "Primary DB server.",
+        DeploymentNode primaryDbServer = model.addDeploymentNode(
+                "Live",
+                "bigbank-db01",
+                "Primary DB server.",
                 "Ubuntu 16.04 LTS",
                 1);
-        DeploymentNode oraclePrimary = primaryDbServer.addDeploymentNode("Oracle - Primary", "Live database.",
+        DeploymentNode oraclePrimary = primaryDbServer.addDeploymentNode(
+                "Oracle - Primary",
+                "Live database.",
                 "Oracle 12c");
         oraclePrimary.add(database);
 
-        DeploymentNode secondaryDbServer = model.addDeploymentNode("bigbank-db02", "Secondary DB server.",
-                "Ubuntu 16.04 LTS", 1);
-        secondaryDbServer.addDeploymentNode("Oracle - Secondary", "Standby database.", "Oracle 12c");
+        DeploymentNode secondaryDbServer = model.addDeploymentNode(
+                "Live",
+                "bigbank-db02",
+                "Secondary DB server.",
+                "Ubuntu 16.04 LTS",
+                1);
+        secondaryDbServer.addDeploymentNode(
+                "Oracle - Secondary",
+                "Standby database.",
+                "Oracle 12c");
 
         DeploymentView liveDeployment = views.createDeploymentView(internetBankingSystem, "LiveDeployment",
                 "Live environment deployment");
-
+        liveDeployment.setEnvironment("Live");
         liveDeployment.addAllDeploymentNodes();
-        
         liveDeployment.enableAutomaticLayout(RankDirection.TopBottom);
 
         WorkspaceUtils.saveWorkspaceToJson(workspace, new File("workspace.json"));
-
-        System.out.println("Workspace JSON generated.");
     }
 }

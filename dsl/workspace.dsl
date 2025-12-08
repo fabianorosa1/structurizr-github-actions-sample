@@ -38,7 +38,7 @@ workspace {
             include *
             autolayout
         }
-        themes default https://github.com/fabianorosa1/structurizr-themes/tree/master/sap-btp-solution-diagrams-2025.12.08/theme.json
+        themes default https://fabianorosa1.github.io/structurizr-themes/sap-btp-solution-diagrams-2025.12.08/theme.json
         styles {
             element "Database" {
                 shape Cylinder

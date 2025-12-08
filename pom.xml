@@ -1,0 +1,37 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>structurizr-c4-demo</artifactId>
+  <version>1.0.0</version>
+  <properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <structurizr.version>5.0.3</structurizr.version>
+  </properties>
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/com.structurizr/structurizr-core -->
+    <dependency>
+        <groupId>com.structurizr</groupId>
+        <artifactId>structurizr-core</artifactId>
+        <version>${structurizr.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.structurizr/structurizr-client -->
+    <dependency>
+        <groupId>com.structurizr</groupId>
+        <artifactId>structurizr-client</artifactId>
+        <version>${structurizr.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.6.2</version>
+        <configuration>
+          <mainClass>com.example.StructurizrWorkspace</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

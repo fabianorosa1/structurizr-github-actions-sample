@@ -1,8 +1,6 @@
 package com.example;
 
 import com.structurizr.Workspace;
-import com.structurizr.annotation.Tag;
-import com.structurizr.autolayout.graphviz.GraphvizAutomaticLayout;
 import com.structurizr.model.*;
 import com.structurizr.util.WorkspaceUtils;
 import com.structurizr.view.*;
@@ -54,11 +52,8 @@ public class StructurizrWorkspace {
         DeploymentView liveDeployment = views.createDeploymentView(internetBankingSystem, "LiveDeployment",
                 "Live environment deployment");
 
-        liveDeployment.enableAutomaticLayout();
         liveDeployment.addAllDeploymentNodes();
-
-        GraphvizAutomaticLayout graphviz = new GraphvizAutomaticLayout();
-        graphviz.apply(workspace);
+        liveDeployment.enableAutomaticLayout();
 
         WorkspaceUtils.saveWorkspaceToJson(workspace, new File("workspace.json"));
 

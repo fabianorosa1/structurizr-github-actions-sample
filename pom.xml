@@ -29,7 +29,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.6.2</version>
         <configuration>
-          <mainClass>com.example.StructurizrWorkspace</mainClass>
+          <mainClass>com.example.WebshopWorkspace</mainClass>
         </configuration>
       </plugin>
     </plugins>

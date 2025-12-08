@@ -3,6 +3,8 @@ package com.example;
 import com.structurizr.Workspace;
 import com.structurizr.model.*;
 import com.structurizr.view.*;
+import com.structurizr.view.AutomaticLayout.RankDirection;
+
 import java.io.File;
 
 public class WebshopWorkspace {
@@ -12,6 +14,20 @@ public class WebshopWorkspace {
         Workspace workspace = new Workspace("My Webshop Workspace", "Generated from DSL");
         Model model = workspace.getModel();
         ViewSet views = workspace.getViews();
+
+        // ---------------------------------------------------------
+        // THEMES & STYLES
+        // ---------------------------------------------------------
+
+        views.getConfiguration().setThemes(
+                "https://fabianorosa1.github.io/structurizr-themes/sap-btp-solution-diagrams-2025.12.08/theme.json"
+        );
+
+        // Style override for Database shape (applies to elements tagged "Database")
+        Styles styles = views.getConfiguration().getStyles();
+        styles.addElementStyle("Database").shape(Shape.Cylinder);
+        styles.addElementStyle(Tags.SOFTWARE_SYSTEM).background("#1168bd").color("#ffffff");
+        styles.addElementStyle(Tags.PERSON).background("#08427b").color("#ffffff").shape(Shape.Person);
 
         // ---------------------------------------------------------
         // MODEL
@@ -88,7 +104,7 @@ public class WebshopWorkspace {
                 "System Context for My Webshop"
         );
         contextView.addAllElements();
-        contextView.enableAutomaticLayout();
+        contextView.enableAutomaticLayout(RankDirection.TopBottom);
 
         // Container View
         ContainerView containerView = views.createContainerView(
@@ -97,19 +113,7 @@ public class WebshopWorkspace {
                 "Container View for My Webshop"
         );
         containerView.addAllElements();
-        containerView.enableAutomaticLayout();
-
-        // ---------------------------------------------------------
-        // THEMES & STYLES
-        // ---------------------------------------------------------
-
-        views.getConfiguration().setThemes(
-                "https://fabianorosa1.github.io/structurizr-themes/sap-btp-solution-diagrams-2025.12.08/theme.json"
-        );
-
-        // Style override for Database shape (applies to elements tagged "Database")
-        Styles styles = views.getConfiguration().getStyles();
-        styles.addElementStyle("Database").shape(Shape.Cylinder);
+        containerView.enableAutomaticLayout(RankDirection.TopBottom);
 
         // ---------------------------------------------------------
         // SAVE WORKSPACE

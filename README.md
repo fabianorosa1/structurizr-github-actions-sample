@@ -12,3 +12,15 @@ This bundle includes:
 
 # Software Architecture as Code With Structurizr
 https://mydeveloperplanet.com/2024/03/20/software-architecture-as-code-with-structurizr/
+
+# Embedding diagrams
+https://docs.structurizr.com/static/embed
+
+# Structurizr Themes
+https://docs.structurizr.com/ui/diagrams/themes
+
+# C4 Model Examples
+https://c4model.com/diagrams/deployment
+
+# BTP Solution Diagrams
+https://sap.github.io/btp-solution-diagrams/docs/btp_guideline/atomic/

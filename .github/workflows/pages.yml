@@ -33,8 +33,7 @@ jobs:
 
       - name: Install Go dependencies
         run: |
-          go get .
-          go get github.com/SAP/cloud-mta/mta
+          go install github.com/SAP/cloud-mta/mta@latest
 
       - name: Run Go MTA processor
         run: |

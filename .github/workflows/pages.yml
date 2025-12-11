@@ -26,6 +26,36 @@ jobs:
           java-version: '21'
           cache: 'maven'
 
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: '>=1.22.0'
+
+      - name: Install Go dependencies
+        run: |
+          go get .
+          go get github.com/SAP/cloud-mta/mta
+
+      - name: Run Go MTA processor
+        run: |
+          go version
+          // sets the path to the MTA project.
+          mf, _ := ioutil.ReadFile("./mta.yaml")
+          // Returns an MTA object.
+          if err != nil {
+            return err
+          }
+          // unmarshal MTA content.
+          m := Unmarshal(mf)
+          if err != nil {
+            return err
+          }
+          // Returns the module properties.
+          module, err := m.GetModuleByName("eb-java")
+          if err != nil {
+            return err
+          }
+
       - name: Setup Graphviz
         run: |
           sudo apt-get update

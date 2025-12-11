@@ -24,8 +24,13 @@ jobs:
           mkdir -p cloud-mta
           curl -L -o cloud-mta.tar.gz https://github.com/SAP/cloud-mta/releases/download/v1.0.8/cloud-mta_1.0.8_Linux_amd64.tar.gz
           tar -xf cloud-mta.tar.gz -C cloud-mta
+          
+          echo "MTA ID:"
           ./cloud-mta/mta get id -p ./mta.yaml 
+          echo "MTA Modules:"
           ./cloud-mta/mta get modules -p ./mta.yaml 
+          echo "MTA Resources:"
+          ./cloud-mta/mta get resources -p ./mta.yaml 
 
       - name: Set up JDK
         uses: actions/setup-java@v4

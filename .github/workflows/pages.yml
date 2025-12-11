@@ -19,6 +19,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Install MTA CLI
+        run: |
+          curl -L -o cloud-mta.tar.gz https://github.com/SAP/cloud-mta/releases/download/v1.0.8/cloud-mta_1.0.8_Linux_amd64.tar.gz
+          tar -xf cloud-mta.tar.gz 
+          ls -la
+          ./cloud-mta/mta
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
@@ -35,12 +42,6 @@ jobs:
         run: |
           mvn -q -e -DskipTests package
           mvn -q -e exec:java
-
-      - name: Install MTA CLI
-        run: |
-          curl -L -o cloud-mta.zip https://github.com/SAP/cloud-mta/releases/download/v1.0.8/cloud-mta_1.0.8_Linux_amd64.tar.gz
-          tar -xvzf cloud-mta.zip -C cloud-mta
-          ./cloud-mta/mta
 
       - name: Install Structurizr CLI
         run: |

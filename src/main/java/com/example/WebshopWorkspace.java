@@ -6,6 +6,7 @@ import com.structurizr.view.*;
 import com.structurizr.view.AutomaticLayout.RankDirection;
 
 import java.io.File;
+import java.util.UUID;
 
 public class WebshopWorkspace {
 
@@ -76,6 +77,8 @@ public class WebshopWorkspace {
         );
         webshopDatabase.addTags("SAP L1");
 
+        addDatabases(myWebshop, webshopBackend);
+
         // ---------------------------------------------------------
         // RELATIONSHIPS
         // ---------------------------------------------------------
@@ -123,5 +126,17 @@ public class WebshopWorkspace {
                 workspace,
                 new File("workspace.json")
         );
+    }
+
+    public static void addDatabases(SoftwareSystem myWebshop, Container webshopBackend) {
+        for (int i = 0; i < 10; i++) {
+                Container database = myWebshop.addContainer(
+                        "database-" + UUID.randomUUID().toString(),
+                        "The webshop database",
+                        ""
+                );
+                database.addTags("SAP L1");    
+                webshopBackend.uses(database, "Uses", "JDBC");            
+        }
     }
 }

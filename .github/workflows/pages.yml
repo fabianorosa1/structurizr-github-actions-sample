@@ -27,10 +27,10 @@ jobs:
           
           echo "MTA ID:"
           ./cloud-mta/mta get id -p ./mta.yaml 
-          echo "MTA Modules:"
-          ./cloud-mta/mta get modules -p ./mta.yaml 
-          echo "MTA Resources:"
-          ./cloud-mta/mta get resources -p ./mta.yaml 
+          #echo "MTA Modules:"
+          #./cloud-mta/mta get modules -p ./mta.yaml 
+          #echo "MTA Resources:"
+          #./cloud-mta/mta get resources -p ./mta.yaml 
 
       - name: Set up JDK
         uses: actions/setup-java@v4

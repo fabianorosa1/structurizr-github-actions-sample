@@ -57,12 +57,14 @@ public class WebshopWorkspace {
                 "The frontend for the customer",
                 ""
         );
+        customerFrontend.addTags("NON SAP L0");
 
         Container administratorFrontend = myWebshop.addContainer(
                 "administratorFrontend",
                 "The frontend for the administrator",
                 ""
         );
+        administratorFrontend.addTags("NON SAP L1");
 
         Container webshopBackend = myWebshop.addContainer(
                 "webshopBackend",

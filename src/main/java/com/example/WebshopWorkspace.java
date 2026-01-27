@@ -132,10 +132,10 @@ public class WebshopWorkspace {
 
     public static void addDatabases(SoftwareSystem myWebshop, Container webshopBackend) {
         for (int i = 0; i < 10; i++) {
-                Container database = myWebshop.addContainer(
-                        "Database",
+                Container database = myWebshop.addContainer(                       
                         "db-" + UUID.randomUUID().toString(),
-                        "The webshop database"
+                        "The webshop database",
+                         "Database"
                 );
                 database.addTags("SAP L1");    
                 webshopBackend.uses(database, "Uses", "JDBC");            

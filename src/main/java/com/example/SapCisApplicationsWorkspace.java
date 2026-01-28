@@ -108,10 +108,10 @@ public class SapCisApplicationsWorkspace {
         // ---------------------------------------------------------
 
         // System context
-        cis.uses(corporateIdp, "Trusts for corporate user authentication");
-        btpCF.uses(cisIasApplicationsContainer, "Authenticate");
-        btpNeo.uses(cisIasApplicationsContainer, "Authenticate");
-        s4hanaOnPrem.uses(cisIasApplicationsContainer, "Authenticate");
+        cis.uses(corporateIdp, "Trust");
+        btpCF.uses(cis, "Authenticate");
+        btpNeo.uses(cis, "Authenticate");
+        s4hanaOnPrem.uses(cis, "Authenticate");
 
         // Software system (container-level) relationships
         CISA_BTPCF_INO_SHELL_CF_AFC_EU10.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");

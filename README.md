@@ -21,6 +21,13 @@ https://docs.structurizr.com/ui/diagrams/themes
 
 # C4 Model Examples
 https://c4model.com/diagrams/deployment
+https://levelup.gitconnected.com/c4-diagrams-as-code-quick-start-with-structurizr-dsl-spring-boot-90e29542e41f?gi=4a91391f0551
+
+# C4 Elements and shapes
+https://structurizr.com/embed/12541
 
 # BTP Solution Diagrams
 https://sap.github.io/btp-solution-diagrams/docs/btp_guideline/atomic/
+
+
+

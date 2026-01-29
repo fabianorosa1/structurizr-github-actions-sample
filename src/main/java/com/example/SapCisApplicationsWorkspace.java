@@ -152,7 +152,7 @@ public class SapCisApplicationsWorkspace {
 
         // System Landscape View View CIS
         SystemLandscapeView  systemLandscapeViewCis = views.createSystemLandscapeView (
-                "CisSystemLandscapeView ",
+                "CisSystemLandscapeView",
                 "System Landscape View for CIS"
         );
         systemLandscapeViewCis.addAllElements();
@@ -175,7 +175,7 @@ public class SapCisApplicationsWorkspace {
         );
 
         //containerViewS4.addNearestNeighbours(cisIasApplicationsContainer);
-        containerViewS4.addAllInfluencers();
+        containerViewS4.addAllContainersAndInfluencers();
         /*containerViewS4.add(CISA_S4HANA_ADC_S59_100);        
         /*containerViewS4.add(CISA_S4HANA_ADC_S59_100);
         containerViewS4.add(CISA_BTPNEO_INO_GF_SERP_IG_001);

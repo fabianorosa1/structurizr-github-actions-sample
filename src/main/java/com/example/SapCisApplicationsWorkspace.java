@@ -169,14 +169,15 @@ public class SapCisApplicationsWorkspace {
                 "S4SoftwareSystemView",
                 "Container View for S4"
         );
-        containerViewS4.add(corporateIdp);
-        containerViewS4.add(cisIasApplicationsContainer);
+
         containerViewS4.add(CISA_S4HANA_ADC_S59_100);
         containerViewS4.add(CISA_BTPNEO_INO_GF_SERP_IG_001);
         containerViewS4.add(CISA_BTPCF_INO_SHELL_CF_AFC_EU10);
         containerViewS4.add(s4hanaOnPremiseADCContainer);
         containerViewS4.add(s4hanaOnPremiseCfinContainer);
-        containerViewS4.add(s4hanaOnPremiseNucleosContainer);
+        containerViewS4.add(s4hanaOnPremiseNucleosContainer);        
+        containerViewS4.add(cisIasApplicationsContainer);
+        containerViewS4.add(corporateIdp);
         
         containerViewS4.enableAutomaticLayout(RankDirection.TopBottom);
         

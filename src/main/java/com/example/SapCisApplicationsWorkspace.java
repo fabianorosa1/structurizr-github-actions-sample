@@ -38,27 +38,6 @@ public class SapCisApplicationsWorkspace {
         //Person customer = model.addPerson("Customer", "The customer of our webshop");
         //Person administrator = model.addPerson("Administrator", "The administrator of the webshop");
 
-        // External systems
-        SoftwareSystem corporateIdp = model.addSoftwareSystem(
-                "PingID - DEV",
-                "Used for IAM for corporate users"
-        );
-
-        SoftwareSystem btpCF = model.addSoftwareSystem(
-                "SAP Business Technology Platform - CF",
-                "Used for data, extension and integration"
-        );
-
-        SoftwareSystem btpNeo = model.addSoftwareSystem(
-                "SAP Business Technology Platform - Neo",
-                "Used for data, extension and integration"
-        );
-
-        SoftwareSystem s4hanaOnPrem = model.addSoftwareSystem(
-                "S/4 HANA OnPrem",
-                "Used for ERP core processes"
-        );
-
         // Software System: Cloud Identity Services - INO
         SoftwareSystem cis = model.addSoftwareSystem(
                 "SAP Cloud Identity Services - INO",
@@ -71,6 +50,27 @@ public class SapCisApplicationsWorkspace {
                 "IAS",
                 "Identity Authentication Service",
                 "Applications"
+        );
+        
+        // External systems
+        SoftwareSystem corporateIdp = model.addSoftwareSystem(
+                "PingID - DEV",
+                "Used for IAM for corporate users"
+        );
+
+        Container btpCF = cis.addContainer(
+                "SAP Business Technology Platform - CF",
+                "Used for data, extension and integration"
+        );
+
+        Container btpNeo = cis.addContainer(
+                "SAP Business Technology Platform - Neo",
+                "Used for data, extension and integration"
+        );
+
+        Container s4hanaOnPrem = cis.addContainer(
+                "S/4 HANA OnPrem",
+                "Used for ERP core processes"
         );
 
         // Containers - CIS Applications

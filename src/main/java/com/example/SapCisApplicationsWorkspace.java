@@ -43,7 +43,7 @@ public class SapCisApplicationsWorkspace {
                 "SAP Cloud Identity Services - INO",
                 "Used for IAM for SAP solutions"
         );
-        cis.addTags("SAP L0");
+        cis.addTags("SAP CIS L0");
 
         // Containers - CIS Applications
         Container cisIasApplicationsContainer = cis.addContainer(
@@ -51,23 +51,26 @@ public class SapCisApplicationsWorkspace {
                 "Identity Authentication Service",
                 "Applications/Endpoints"
         );
-        
+        cisIasApplicationsContainer.addTags("SAP IAS L1");
+
         // External systems
         SoftwareSystem corporateIdp = model.addSoftwareSystem(
                 "PingID - DEV",
                 "Used for IAM for corporate users"
         );
-        corporateIdp.addTags("NON SAP L0");
+        corporateIdp.addTags("PING ID L0");
         
         SoftwareSystem btpCF = model.addSoftwareSystem(
                 "SAP Business Technology Platform - CF",
                 "Used for data, extension and integration"
         );
+        btpCF.addTags("SAP BTP CF L0");
 
         SoftwareSystem btpNeo = model.addSoftwareSystem(
                 "SAP Business Technology Platform - Neo",
                 "Used for data, extension and integration"
         );
+        btpNeo.addTags("SAP BTP NEO L0");
 
         SoftwareSystem s4hanaOnPrem = model.addSoftwareSystem(
                 "S/4 HANA OnPrem",
@@ -80,18 +83,21 @@ public class SapCisApplicationsWorkspace {
                 "S/4 HANA OnPrem ADC",
                 "System"
         );
+        s4hanaOnPremiseADCContainer.addTags("SAP L0");
 
         Container s4hanaOnPremiseCfinContainer = s4hanaOnPrem.addContainer(
                 "S/4 HANA OnPrem CFIN",
                 "S/4 HANA OnPrem CFIN",
                 "System"
         );
+        s4hanaOnPremiseCfinContainer.addTags("SAP L0");
 
         Container s4hanaOnPremiseNucleosContainer = s4hanaOnPrem.addContainer(
                 "S/4 HANA OnPrem Nucleos",
                 "S/4 HANA OnPrem Nucleos",
                 "System"
         );    
+        s4hanaOnPremiseNucleosContainer.addTags("SAP L0");
 
         // Containers - CIS Applications
         Container CISA_BTPCF_INO_SHELL_CF_OPEX_EU20 = cis.addContainer(

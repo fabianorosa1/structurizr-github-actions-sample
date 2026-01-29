@@ -68,7 +68,7 @@ public class SapCisApplicationsWorkspace {
                 "Used for data, extension and integration"
         );
 
-        SoftwareSystem s4hanaOnPremADC = model.addSoftwareSystemr(
+        SoftwareSystem s4hanaOnPremADC = model.addSoftwareSystem(
                 "S/4 HANA OnPrem ADC",
                 "Used for ERP core processes"
         );

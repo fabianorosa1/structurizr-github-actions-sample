@@ -152,7 +152,7 @@ public class SapCisApplicationsWorkspace {
                 "System Landscape View for CIS"
         );
         systemLandscapeViewCis.addAllElements();
-        systemLandscapeViewCis.enableAutomaticLayout(RankDirection.LeftRight);
+        systemLandscapeViewCis.enableAutomaticLayout(RankDirection.BottomTop);
 
         // Container View CIS
         ContainerView containerViewCis = views.createContainerView(
@@ -161,7 +161,7 @@ public class SapCisApplicationsWorkspace {
                 "Container View for CIS"
         );
         containerViewCis.addAllElements();
-        containerViewCis.enableAutomaticLayout(RankDirection.LeftRight);
+        containerViewCis.enableAutomaticLayout(RankDirection.TopBottom);
 
         // Container View S4
         ContainerView containerViewS4 = views.createContainerView(

@@ -58,21 +58,27 @@ public class SapCisApplicationsWorkspace {
                 "Used for IAM for corporate users"
         );
 
-        Container btpCF = cis.addContainer(
+        SoftwareSystem btpCF = model.addSoftwareSystem(
                 "SAP Business Technology Platform - CF",
                 "Used for data, extension and integration"
         );
 
-        Container btpNeo = cis.addContainer(
+        SoftwareSystem btpNeo = model.addSoftwareSystem(
                 "SAP Business Technology Platform - Neo",
                 "Used for data, extension and integration"
         );
 
-        Container s4hanaOnPrem = cis.addContainer(
-                "S/4 HANA OnPrem",
+        SoftwareSystem s4hanaOnPremADC = model.addSoftwareSystemr(
+                "S/4 HANA OnPrem ADC",
                 "Used for ERP core processes"
         );
 
+        Container s4hanaOnPremises = s4hanaOnPrem.addContainer(
+                "S/4 HANA OnPrem",
+                "S/4 HANA OnPrem",
+                "Applications"
+        );
+        
         // Containers - CIS Applications
         Container CISA_BTPCF_INO_SHELL_CF_AFC_EU10 = cis.addContainer(
                 "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
@@ -110,7 +116,7 @@ public class SapCisApplicationsWorkspace {
         // System context        
         cis.uses(btpCF, "Authenticate");
         cis.uses(btpNeo, "Authenticate");
-        cis.uses(s4hanaOnPrem, "Authenticate");
+        cis.uses(s4hanaOnPremADC, "Authenticate");
         cis.uses(corporateIdp, "Trust");
         
         // Software system (container-level) relationships

@@ -132,24 +132,42 @@ public class SapCisApplicationsWorkspace {
         // VIEWS
         // ---------------------------------------------------------
 
-        // System Context View
-        SystemContextView contextView = views.createSystemContextView(
+        // System Context View CIS
+        SystemContextView contextViewCis = views.createSystemContextView(
                 cis,
                 "CisSystemContextView",
                 "System Context for CIS"
         );
-        contextView.addAllElements();
-        contextView.enableAutomaticLayout(RankDirection.TopBottom);
+        contextViewCis.addAllElements();
+        contextViewCis.enableAutomaticLayout(RankDirection.TopBottom);
 
-        // Container View
-        ContainerView containerView = views.createContainerView(
+        // Container View CIS
+        ContainerView containerViewCis = views.createContainerView(
                 cis,
                 "CisSoftwareSystemView",
                 "Container View for CIS"
         );
-        containerView.addAllElements();
-        containerView.enableAutomaticLayout(RankDirection.TopBottom);
+        containerViewCis.addAllElements();
+        containerViewCis.enableAutomaticLayout(RankDirection.TopBottom);
 
+        // System Context View S4
+        SystemContextView contextViewS4 = views.createSystemContextView(
+                s4hanaOnPrem,
+                "S4SystemContextView",
+                "System Context for S4"
+        );
+        contextViewS4.addAllElements();
+        contextViewS4.enableAutomaticLayout(RankDirection.TopBottom);
+
+        // Container View S4
+        ContainerView containerViewS4 = views.createContainerView(
+                s4hanaOnPrem,
+                "S4SoftwareSystemView",
+                "Container View for S4"
+        );
+        containerViewS4.addAllElements();
+        containerViewS4.enableAutomaticLayout(RankDirection.TopBottom);
+        
         // ---------------------------------------------------------
         // SAVE WORKSPACE
         // ---------------------------------------------------------

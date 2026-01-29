@@ -158,6 +158,8 @@ public class SapCisApplicationsWorkspace {
         containerViewS4.add(corporateIdp);
         containerViewS4.add(cisIasApplicationsContainer);
         containerViewS4.add(CISA_S4HANA_ADC_S59_100);
+        containerViewS4.add(s4hanaOnPremiseADCContainer);
+        
         containerViewS4.enableAutomaticLayout(RankDirection.TopBottom);
         
         // ---------------------------------------------------------

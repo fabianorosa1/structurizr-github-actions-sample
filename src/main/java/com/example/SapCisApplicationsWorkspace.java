@@ -101,28 +101,28 @@ public class SapCisApplicationsWorkspace {
 
         // Containers - CIS Applications
         Container CISA_BTPCF_INO_SHELL_CF_OPEX_EU20 = cis.addContainer(
-                "CISA_BTPCF_INO_SHELL_CF_OPEX_EU20",
+                "INO_SHELL_CF_OPEX_EU20",
                 "CISA_BTPCF_INO_SHELL_CF_OPEX_EU20",
                 "Application Configuration"
         );
         CISA_BTPCF_INO_SHELL_CF_OPEX_EU20.addTags("SAP L1");
         
         Container CISA_BTPCF_INO_SHELL_CF_AFC_EU10 = cis.addContainer(
-                "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
+                "INO_SHELL_CF_AFC_EU10",
                 "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
                 "Application Configuration"
         );    
         CISA_BTPCF_INO_SHELL_CF_AFC_EU10.addTags("SAP L1");
 
         Container CISA_BTPNEO_INO_GF_SERP_IG_001 = cis.addContainer(
-                "CISA_BTPNEO_INO_GF_SERP_IG_001",
+                "INO_GF_SERP_IG_001",
                 "CISA_BTPNEO_INO_GF_SERP_IG_001",
                 "Application Configuration"
         );
         CISA_BTPNEO_INO_GF_SERP_IG_001.addTags("SAP L1");
 
         Container CISA_S4HANA_ADC_S59_100 = cis.addContainer(
-                "CISA_S4HANA_ADC_S59_100",
+                "ADC_S59_100",
                 "CISA_S4HANA_ADC_S59_100",
                 "Application Configuration"
         );

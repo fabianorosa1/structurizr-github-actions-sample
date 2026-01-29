@@ -152,7 +152,7 @@ public class SapCisApplicationsWorkspace {
                 "System Landscape View for CIS"
         );
         systemLandscapeViewCis.addAllElements();
-        systemLandscapeViewCis.enableAutomaticLayout(RankDirection.BottomTop);
+        systemLandscapeViewCis.enableAutomaticLayout(RankDirection.LeftRight);
 
         // Container View CIS
         ContainerView containerViewCis = views.createContainerView(
@@ -161,7 +161,7 @@ public class SapCisApplicationsWorkspace {
                 "Container View for CIS"
         );
         containerViewCis.addAllElements();
-        containerViewCis.enableAutomaticLayout(RankDirection.BottomTop);
+        containerViewCis.enableAutomaticLayout(RankDirection.LeftRight);
 
         // Container View S4
         ContainerView containerViewS4 = views.createContainerView(
@@ -179,7 +179,7 @@ public class SapCisApplicationsWorkspace {
         containerViewS4.add(cisIasApplicationsContainer);
         containerViewS4.add(corporateIdp);
         
-        containerViewS4.enableAutomaticLayout(RankDirection.TopBottom);
+        containerViewS4.enableAutomaticLayout(RankDirection.LeftRight);
         
         // ---------------------------------------------------------
         // SAVE WORKSPACE

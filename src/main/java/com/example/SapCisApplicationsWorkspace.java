@@ -136,6 +136,10 @@ public class SapCisApplicationsWorkspace {
         CISA_BTPNEO_INO_GF_SERP_IG_001.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
         CISA_S4HANA_ADC_S59_100.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
 
+        s4hanaOnPrem.uses(CISA_S4HANA_ADC_S59_100, "Authenticate");
+        s4hanaOnPrem.uses(CISA_BTPNEO_INO_GF_SERP_IG_001, "Authenticate");
+        s4hanaOnPrem.uses(CISA_BTPCF_INO_SHELL_CF_AFC_EU10, "Authenticate");
+
         s4hanaOnPremiseADCContainer.uses(CISA_S4HANA_ADC_S59_100, "Authenticate", "SAML2.0/OIDC");
         s4hanaOnPremiseCfinContainer.uses(CISA_BTPNEO_INO_GF_SERP_IG_001, "Authenticate", "SAML2.0/OIDC");
         s4hanaOnPremiseNucleosContainer.uses(CISA_BTPCF_INO_SHELL_CF_AFC_EU10, "Authenticate", "SAML2.0/OIDC");
@@ -170,7 +174,8 @@ public class SapCisApplicationsWorkspace {
                 "Container View for S4"
         );
 
-        containerViewS4.add(CISA_S4HANA_ADC_S59_100);
+        containerViewS4.addNearestNeighbours(cisIasApplicationsContainer);
+        /*containerViewS4.add(CISA_S4HANA_ADC_S59_100);
         containerViewS4.add(CISA_BTPNEO_INO_GF_SERP_IG_001);
         containerViewS4.add(CISA_BTPCF_INO_SHELL_CF_AFC_EU10);
         containerViewS4.add(s4hanaOnPremiseADCContainer);
@@ -178,7 +183,7 @@ public class SapCisApplicationsWorkspace {
         containerViewS4.add(s4hanaOnPremiseNucleosContainer);        
         containerViewS4.add(cisIasApplicationsContainer);
         containerViewS4.add(corporateIdp);
-        
+        */
         containerViewS4.enableAutomaticLayout(RankDirection.BottomTop);
         
         // ---------------------------------------------------------

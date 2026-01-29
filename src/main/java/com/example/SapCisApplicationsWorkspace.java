@@ -47,7 +47,7 @@ public class SapCisApplicationsWorkspace {
 
         // Containers - CIS Applications
         Container cisIasApplicationsContainer = cis.addContainer(
-                "IAS",
+                "CIS IAS",
                 "Identity Authentication Service",
                 "Applications/Endpoints"
         );
@@ -61,39 +61,39 @@ public class SapCisApplicationsWorkspace {
         corporateIdp.addTags("PING ID L0");
         
         SoftwareSystem btpCF = model.addSoftwareSystem(
-                "SAP Business Technology Platform - CF",
+                "SAP BTP Cloud Foundry",
                 "Used for data, extension and integration"
         );
         btpCF.addTags("SAP BTP CF L0");
 
         SoftwareSystem btpNeo = model.addSoftwareSystem(
-                "SAP Business Technology Platform - Neo",
+                "SAP BTP Neo",
                 "Used for data, extension and integration"
         );
         btpNeo.addTags("SAP BTP NEO L0");
 
         SoftwareSystem s4hanaOnPrem = model.addSoftwareSystem(
-                "S/4 HANA OnPrem",
+                "S/4HANA OnPrem",
                 "Used for ERP core processes"
         );
         s4hanaOnPrem.addTags("SAP L0");
         
         Container s4hanaOnPremiseADCContainer = s4hanaOnPrem.addContainer(
-                "S/4 HANA OnPrem ADC",
+                "S/4HANA OnPrem ADC",
                 "S/4 HANA OnPrem ADC",
                 "System"
         );
         s4hanaOnPremiseADCContainer.addTags("SAP L0");
 
         Container s4hanaOnPremiseCfinContainer = s4hanaOnPrem.addContainer(
-                "S/4 HANA OnPrem CFIN",
+                "S/4HANA OnPrem CFIN",
                 "S/4 HANA OnPrem CFIN",
                 "System"
         );
         s4hanaOnPremiseCfinContainer.addTags("SAP L0");
 
         Container s4hanaOnPremiseNucleosContainer = s4hanaOnPrem.addContainer(
-                "S/4 HANA OnPrem Nucleos",
+                "S/4HANA OnPrem Nucleos",
                 "S/4 HANA OnPrem Nucleos",
                 "System"
         );    

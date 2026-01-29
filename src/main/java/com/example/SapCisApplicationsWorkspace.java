@@ -150,15 +150,6 @@ public class SapCisApplicationsWorkspace {
         containerViewCis.addAllElements();
         containerViewCis.enableAutomaticLayout(RankDirection.TopBottom);
 
-        // System Context View S4
-        SystemContextView contextViewS4 = views.createSystemContextView(
-                s4hanaOnPrem,
-                "S4SystemContextView",
-                "System Context for S4"
-        );
-        contextViewS4.addAllElements();
-        contextViewS4.enableAutomaticLayout(RankDirection.TopBottom);
-
         // Container View S4
         ContainerView containerViewS4 = views.createContainerView(
                 s4hanaOnPrem,

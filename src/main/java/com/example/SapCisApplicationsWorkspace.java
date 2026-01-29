@@ -133,10 +133,9 @@ public class SapCisApplicationsWorkspace {
         // ---------------------------------------------------------
 
         // System Context View CIS
-        SystemContextView contextViewCis = views.createSystemContextView(
-                cis,
-                "CisSystemContextView",
-                "System Context for CIS"
+        SystemLandscapeView  contextViewCis = views.createSystemLandscapeView (
+                "CisSystemLandscapeView ",
+                "System Landscape View for CIS"
         );
         contextViewCis.addAllElements();
         contextViewCis.enableAutomaticLayout(RankDirection.TopBottom);

@@ -73,7 +73,7 @@ public class SapCisApplicationsWorkspace {
                 "Used for ERP core processes"
         );
 
-        Container s4hanaOnPremises = s4hanaOnPrem.addContainer(
+        Container s4hanaOnPremiseContainer = s4hanaOnPremADC.addContainer(
                 "S/4 HANA OnPrem",
                 "S/4 HANA OnPrem",
                 "Applications"
@@ -125,6 +125,8 @@ public class SapCisApplicationsWorkspace {
         CISA_BTPNEO_INO_GF_SERP_IG_001.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
         CISA_S4HANA_ADC_S59_100.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
 
+        s4hanaOnPremADC.uses(s4hanaOnPremiseContainer, "Authenticate", "SAML2.0/OIDC");
+        
         // ---------------------------------------------------------
         // VIEWS
         // ---------------------------------------------------------

@@ -91,20 +91,20 @@ public class SapCisApplicationsWorkspace {
                 "S/4 HANA OnPrem Nucleos",
                 "S/4 HANA OnPrem Nucleos",
                 "System"
-        );
-        
-        // Containers - CIS Applications
-        Container CISA_BTPCF_INO_SHELL_CF_AFC_EU10 = cis.addContainer(
-                "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
-                "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
-                "Application Configuration"
-        );        
+        );    
 
+        // Containers - CIS Applications
         Container CISA_BTPCF_INO_SHELL_CF_OPEX_EU20 = cis.addContainer(
                 "CISA_BTPCF_INO_SHELL_CF_OPEX_EU20",
                 "CISA_BTPCF_INO_SHELL_CF_OPEX_EU20",
                 "Application Configuration"
         );
+        
+        Container CISA_BTPCF_INO_SHELL_CF_AFC_EU10 = cis.addContainer(
+                "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
+                "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
+                "Application Configuration"
+        );    
 
         Container CISA_BTPNEO_INO_GF_SERP_IG_001 = cis.addContainer(
                 "CISA_BTPNEO_INO_GF_SERP_IG_001",
@@ -175,9 +175,9 @@ public class SapCisApplicationsWorkspace {
         );
 
         //containerViewS4.addNearestNeighbours(cisIasApplicationsContainer);
-        containerViewS4.addAllContainersAndInfluencers();
-        /*containerViewS4.add(CISA_S4HANA_ADC_S59_100);        
-        /*containerViewS4.add(CISA_S4HANA_ADC_S59_100);
+        //containerViewS4.addAllContainersAndInfluencers();
+        containerViewS4.add(CISA_S4HANA_ADC_S59_100);        
+        containerViewS4.add(CISA_S4HANA_ADC_S59_100);
         containerViewS4.add(CISA_BTPNEO_INO_GF_SERP_IG_001);
         containerViewS4.add(CISA_BTPCF_INO_SHELL_CF_AFC_EU10);
         containerViewS4.add(s4hanaOnPremiseADCContainer);
@@ -185,7 +185,7 @@ public class SapCisApplicationsWorkspace {
         containerViewS4.add(s4hanaOnPremiseNucleosContainer);        
         containerViewS4.add(cisIasApplicationsContainer);
         containerViewS4.add(corporateIdp);
-        */
+        
         containerViewS4.enableAutomaticLayout(RankDirection.BottomTop);
         
         // ---------------------------------------------------------

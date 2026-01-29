@@ -115,7 +115,7 @@ public class SapCisApplicationsWorkspace {
         // System context        
         cis.uses(btpCF, "Authenticate");
         cis.uses(btpNeo, "Authenticate");
-        cis.uses(s4hanaOnPremADC, "Authenticate");
+        cis.uses(s4hanaOnPrem, "Authenticate");
         cis.uses(corporateIdp, "Trust");
         
         // Software system (container-level) relationships

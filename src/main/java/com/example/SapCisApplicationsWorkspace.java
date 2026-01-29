@@ -57,7 +57,8 @@ public class SapCisApplicationsWorkspace {
                 "PingID - DEV",
                 "Used for IAM for corporate users"
         );
-
+        corporateIdp.addTags("NON SAP L0");
+        
         SoftwareSystem btpCF = model.addSoftwareSystem(
                 "SAP Business Technology Platform - CF",
                 "Used for data, extension and integration"
@@ -68,14 +69,15 @@ public class SapCisApplicationsWorkspace {
                 "Used for data, extension and integration"
         );
 
-        SoftwareSystem s4hanaOnPremADC = model.addSoftwareSystem(
-                "S/4 HANA OnPrem ADC",
+        SoftwareSystem s4hanaOnPrem = model.addSoftwareSystem(
+                "S/4 HANA OnPrem",
                 "Used for ERP core processes"
         );
-
-        Container s4hanaOnPremiseContainer = s4hanaOnPremADC.addContainer(
-                "S/4 HANA OnPrem",
-                "S/4 HANA OnPrem",
+        s4hanaOnPrem.addTags("SAP L0");
+        
+        Container s4hanaOnPremiseADCContainer = s4hanaOnPrem.addContainer(
+                "S/4 HANA OnPrem ADC",
+                "S/4 HANA OnPrem ADC",
                 "Applications"
         );
         
@@ -84,15 +86,13 @@ public class SapCisApplicationsWorkspace {
                 "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
                 "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
                 "Application"
-        );
-        CISA_BTPCF_INO_SHELL_CF_AFC_EU10.addTags("NON SAP L0");
+        );        
 
         Container CISA_BTPCF_INO_SHELL_CF_OPEX_EU20 = cis.addContainer(
                 "CISA_BTPCF_INO_SHELL_CF_OPEX_EU20",
                 "CISA_BTPCF_INO_SHELL_CF_OPEX_EU20",
                 "Application"
         );
-        CISA_BTPCF_INO_SHELL_CF_OPEX_EU20.addTags("NON SAP L1");
 
         Container CISA_BTPNEO_INO_GF_SERP_IG_001 = cis.addContainer(
                 "CISA_BTPNEO_INO_GF_SERP_IG_001",
@@ -105,8 +105,7 @@ public class SapCisApplicationsWorkspace {
                 "CISA_S4HANA_ADC_S59_100",
                 "Application"
         );
-        CISA_S4HANA_ADC_S59_100.addTags("SAP L1");
-
+        
         //addDatabases(myWebshop, webshopBackend);
 
         // ---------------------------------------------------------
@@ -125,9 +124,9 @@ public class SapCisApplicationsWorkspace {
         CISA_BTPNEO_INO_GF_SERP_IG_001.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
         CISA_S4HANA_ADC_S59_100.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
 
-        //s4hanaOnPremADC.uses(s4hanaOnPremiseContainer, "Authenticate", "SAML2.0/OIDC");
+        s4hanaOnPremiseADCContainer.uses(CISA_S4HANA_ADC_S59_100, "Authenticate", "SAML2.0/OIDC");
         
-        corporateIdp.uses(cisIasApplicationsContainer, "Trust");
+        cisIasApplicationsContainer.uses(corporateIdp, "Trust");
         
         // ---------------------------------------------------------
         // VIEWS

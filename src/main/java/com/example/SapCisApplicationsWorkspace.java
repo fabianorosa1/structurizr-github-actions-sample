@@ -49,7 +49,7 @@ public class SapCisApplicationsWorkspace {
         Container cisIasApplicationsContainer = cis.addContainer(
                 "IAS",
                 "Identity Authentication Service",
-                "Applications"
+                "Applications/Endpoints"
         );
         
         // External systems
@@ -78,32 +78,44 @@ public class SapCisApplicationsWorkspace {
         Container s4hanaOnPremiseADCContainer = s4hanaOnPrem.addContainer(
                 "S/4 HANA OnPrem ADC",
                 "S/4 HANA OnPrem ADC",
-                "Applications"
+                "System"
+        );
+
+        Container s4hanaOnPremiseCfinContainer = s4hanaOnPrem.addContainer(
+                "S/4 HANA OnPrem CFIN",
+                "S/4 HANA OnPrem CFIN",
+                "System"
+        );
+
+        Container s4hanaOnPremiseNucleosContainer = s4hanaOnPrem.addContainer(
+                "S/4 HANA OnPrem Nucleos",
+                "S/4 HANA OnPrem Nucleos",
+                "System"
         );
         
         // Containers - CIS Applications
         Container CISA_BTPCF_INO_SHELL_CF_AFC_EU10 = cis.addContainer(
                 "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
                 "CISA_BTPCF_INO_SHELL_CF_AFC_EU10",
-                "Application"
+                "Application Configuration"
         );        
 
         Container CISA_BTPCF_INO_SHELL_CF_OPEX_EU20 = cis.addContainer(
                 "CISA_BTPCF_INO_SHELL_CF_OPEX_EU20",
                 "CISA_BTPCF_INO_SHELL_CF_OPEX_EU20",
-                "Application"
+                "Application Configuration"
         );
 
         Container CISA_BTPNEO_INO_GF_SERP_IG_001 = cis.addContainer(
                 "CISA_BTPNEO_INO_GF_SERP_IG_001",
                 "CISA_BTPNEO_INO_GF_SERP_IG_001",
-                "Application"
+                "Application Configuration"
         );
 
         Container CISA_S4HANA_ADC_S59_100 = cis.addContainer(
                 "CISA_S4HANA_ADC_S59_100",
                 "CISA_S4HANA_ADC_S59_100",
-                "Application"
+                "Application Configuration"
         );
         
         //addDatabases(myWebshop, webshopBackend);
@@ -125,7 +137,9 @@ public class SapCisApplicationsWorkspace {
         CISA_S4HANA_ADC_S59_100.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
 
         s4hanaOnPremiseADCContainer.uses(CISA_S4HANA_ADC_S59_100, "Authenticate", "SAML2.0/OIDC");
-        
+        s4hanaOnPremiseCfinContainer.uses(CISA_BTPNEO_INO_GF_SERP_IG_001, "Authenticate", "SAML2.0/OIDC");
+        s4hanaOnPremiseNucleosContainer.uses(CISA_BTPCF_INO_SHELL_CF_AFC_EU10, "Authenticate", "SAML2.0/OIDC");
+            
         cisIasApplicationsContainer.uses(corporateIdp, "Trust");
         
         // ---------------------------------------------------------
@@ -158,7 +172,11 @@ public class SapCisApplicationsWorkspace {
         containerViewS4.add(corporateIdp);
         containerViewS4.add(cisIasApplicationsContainer);
         containerViewS4.add(CISA_S4HANA_ADC_S59_100);
+        containerViewS4.add(CISA_BTPNEO_INO_GF_SERP_IG_001);
+        containerViewS4.add(CISA_BTPCF_INO_SHELL_CF_AFC_EU10);
         containerViewS4.add(s4hanaOnPremiseADCContainer);
+        containerViewS4.add(s4hanaOnPremiseCfinContainer);
+        containerViewS4.add(s4hanaOnPremiseNucleosContainer);
         
         containerViewS4.enableAutomaticLayout(RankDirection.TopBottom);
         

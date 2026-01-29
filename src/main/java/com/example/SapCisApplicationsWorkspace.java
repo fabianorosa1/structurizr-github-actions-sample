@@ -174,9 +174,8 @@ public class SapCisApplicationsWorkspace {
                 "Container View for S4"
         );
 
-        containerViewS4.addNearestNeighbours(cisIasApplicationsContainer);
-        containerViewS4.addNearestNeighbours(s4hanaOnPrem);
-
+        //containerViewS4.addNearestNeighbours(cisIasApplicationsContainer);
+        containerViewS4.addAllInfluencers();
         /*containerViewS4.add(CISA_S4HANA_ADC_S59_100);        
         /*containerViewS4.add(CISA_S4HANA_ADC_S59_100);
         containerViewS4.add(CISA_BTPNEO_INO_GF_SERP_IG_001);

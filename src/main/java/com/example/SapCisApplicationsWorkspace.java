@@ -112,7 +112,7 @@ public class SapCisApplicationsWorkspace {
         // RELATIONSHIPS
         // ---------------------------------------------------------
 
-        // System context        
+        // System Landscape context        
         btpCF.uses(cis, "Authenticate");
         btpNeo.uses(cis, "Authenticate");
         s4hanaOnPrem.uses(cis, "Authenticate");
@@ -124,7 +124,7 @@ public class SapCisApplicationsWorkspace {
         CISA_BTPNEO_INO_GF_SERP_IG_001.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
         CISA_S4HANA_ADC_S59_100.uses(cisIasApplicationsContainer, "Authenticate", "SAML2.0/OIDC");
 
-        CISA_S4HANA_ADC_S59_100.uses(s4hanaOnPremiseADCContainer, "Authenticate", "SAML2.0/OIDC");
+        s4hanaOnPremiseADCContainer.uses(CISA_S4HANA_ADC_S59_100, "Authenticate", "SAML2.0/OIDC");
         
         cisIasApplicationsContainer.uses(corporateIdp, "Trust");
         
@@ -132,13 +132,13 @@ public class SapCisApplicationsWorkspace {
         // VIEWS
         // ---------------------------------------------------------
 
-        // System Context View CIS
-        SystemLandscapeView  contextViewCis = views.createSystemLandscapeView (
+        // System Landscape View View CIS
+        SystemLandscapeView  systemLandscapeViewCis = views.createSystemLandscapeView (
                 "CisSystemLandscapeView ",
                 "System Landscape View for CIS"
         );
-        contextViewCis.addAllElements();
-        contextViewCis.enableAutomaticLayout(RankDirection.TopBottom);
+        systemLandscapeViewCis.addAllElements();
+        systemLandscapeViewCis.enableAutomaticLayout(RankDirection.TopBottom);
 
         // Container View CIS
         ContainerView containerViewCis = views.createContainerView(

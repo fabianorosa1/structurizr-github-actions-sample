@@ -16,6 +16,9 @@ https://mydeveloperplanet.com/2024/03/20/software-architecture-as-code-with-stru
 # Embedding diagrams
 https://docs.structurizr.com/static/embed
 
+# Playground Structurizr
+https://playground.structurizr.com/
+
 # Structurizr Themes
 https://docs.structurizr.com/ui/diagrams/themes
 
